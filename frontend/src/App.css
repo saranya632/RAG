@@ -1,0 +1,286 @@
+/* ---- Colours and basics: change the look here --------------------------- */
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #616e7c;
+  --color-border: #d9e2ec;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-user-bubble: #e0ecff;
+  --color-assistant-bubble: #f1f3f5;
+  --color-success-bg: #e7f6ec;
+  --color-success-text: #1e6b3a;
+  --color-error-bg: #fdecec;
+  --color-error-text: #a61b1b;
+  --color-info-bg: #eaf2fd;
+  --color-info-text: #1e4f91;
+  --radius: 8px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+h1, h2 {
+  margin: 0 0 12px;
+}
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.15rem; }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin: 0 0 12px;
+}
+
+/* ---- Forms and buttons -------------------------------------------------- */
+label {
+  display: block;
+  font-weight: 600;
+  margin: 12px 0 4px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 9px 11px;
+  font: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -1px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.btn-secondary:hover {
+  background: var(--color-bg);
+}
+
+/* ---- Status messages ---------------------------------------------------- */
+.alert {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  margin: 12px 0;
+  font-size: 0.925rem;
+}
+.alert p { margin: 0 0 8px; }
+ul.alert { padding-left: 28px; }
+.alert-success { background: var(--color-success-bg); color: var(--color-success-text); }
+.alert-error { background: var(--color-error-bg); color: var(--color-error-text); }
+.alert-info { background: var(--color-info-bg); color: var(--color-info-text); }
+
+.field-error {
+  color: var(--color-error-text);
+  font-size: 0.875rem;
+  margin: 6px 0 0;
+}
+
+/* ---- Login / register --------------------------------------------------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+}
+.auth-card .btn-primary {
+  width: 100%;
+  margin-top: 18px;
+}
+.auth-card .alert .btn-primary {
+  margin-top: 0;
+}
+.auth-switch {
+  text-align: center;
+  margin: 16px 0 0;
+  font-size: 0.925rem;
+}
+
+/* ---- Dashboard layout --------------------------------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Upload on the left, chat on the right; stacked on narrow screens. */
+.dashboard-main {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 2fr;
+  gap: 20px;
+  padding: 20px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .dashboard-main {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+}
+
+/* ---- PDF upload --------------------------------------------------------- */
+.upload-card input[type="file"] {
+  padding: 7px;
+}
+.selected-file {
+  margin: 10px 0;
+  font-size: 0.925rem;
+  word-break: break-all;
+}
+
+/* ---- Chat --------------------------------------------------------------- */
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 110px);
+  min-height: 420px;
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 2px 12px;
+}
+.chat-empty {
+  color: var(--color-muted);
+  text-align: center;
+  margin: auto;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
+.message-user {
+  align-self: flex-end;
+  background: var(--color-user-bubble);
+}
+.message-assistant {
+  align-self: flex-start;
+  background: var(--color-assistant-bubble);
+}
+.message-notice {
+  align-self: flex-start;
+  background: var(--color-info-bg);
+  color: var(--color-info-text);
+}
+.message-error {
+  align-self: flex-start;
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+.message-author {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2px;
+}
+.message-text {
+  margin: 0;
+  white-space: pre-wrap; /* keep the line breaks in answers */
+  word-wrap: break-word;
+}
+.thinking {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.sources {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+}
+.sources-title {
+  font-weight: 700;
+}
+.sources ol {
+  margin: 4px 0 0;
+  padding-left: 22px;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+.chat-form textarea {
+  resize: none;
+}
+.chat-form .btn {
+  align-self: stretch;
+}

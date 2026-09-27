@@ -1,0 +1,232 @@
+# Secrets / local config
+.env
+
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime data (uploaded PDFs, vector store)
+uploads/*
+!uploads/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+data/models/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+
+# ==========================================
+# Environment / Secrets
+# ==========================================
+
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Keep example configuration files
+!.env.example
+
+
+# ==========================================
+# Python
+# ==========================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.pyo
+*.pyd
+
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+
+# ==========================================
+# Flask
+# ==========================================
+
+instance/
+*.log
+
+
+# ==========================================
+# Uploaded PDF files
+# ==========================================
+
+uploads/
+uploaded_files/
+
+# Ignore PDF files if they are user-uploaded documents
+*.pdf
+
+
+# ==========================================
+# ChromaDB
+# ==========================================
+
+chroma_db/
+chromadb/
+.chroma/
+
+# ChromaDB local files
+*.sqlite3
+*.sqlite
+
+
+# ==========================================
+# Machine Learning / Model Cache
+# ==========================================
+
+# Hugging Face cache
+.cache/
+huggingface_cache/
+
+# Sentence-transformers cache
+sentence_transformers/
+
+# Local model files
+models/
+
+# Do NOT commit downloaded model files
+*.bin
+*.safetensors
+*.gguf
+
+
+# ==========================================
+# Node / React
+# ==========================================
+
+frontend/node_modules/
+node_modules/
+
+frontend/dist/
+frontend/build/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+frontend/.vite/
+
+# React environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+frontend/.env.test
+
+# Keep example frontend environment file
+!frontend/.env.example
+
+
+# ==========================================
+# IDE / Editors
+# ==========================================
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+
+# ==========================================
+# OS Files
+# ==========================================
+
+.DS_Store
+
+
+# ==========================================
+# Logs
+# ==========================================
+
+*.log
+logs/
+
+
+# ==========================================
+# Temporary Files
+# ==========================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+
+# ==========================================
+# Database / Local Development
+# ==========================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL local dump files
+*.dump
+*.backup
+
+
+# ==========================================
+# Jupyter
+# ==========================================
+
+.ipynb_checkpoints/
+
+
+# ==========================================
+# Security / Certificates
+# ==========================================
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
