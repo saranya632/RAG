@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Enterprise RAG — PDF Ingestion and Chat
 
 **Stage 1 (`POST /upload-pdf`)** accepts a PDF upload, extracts the text, splits it into chunks, embeds the chunks with a local model and stores them in ChromaDB.
@@ -347,3 +348,7 @@ The tests use fake deterministic embeddings, a fake chat model in place of Qwen,
 - `/upload-pdf` and `/chat` require a valid JWT. Passwords are stored only as salted scrypt hashes and are never returned or logged.
 - Tokens are signed, not encrypted: anyone can read their contents (the user id), so they carry no secrets. Keep `JWT_SECRET_KEY` private, because anyone who has it can create valid tokens.
 - There is no HTTPS yet, so keep the server bound to `127.0.0.1` until it runs behind HTTPS.
+=======
+# RAG
+Rag based chatbot
+>>>>>>> 4a45019ad368a6adfc34c66ea317913d3b69f6fc
